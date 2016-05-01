@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    //return view('welcome');
-	return 'Hello World';
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +24,58 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
+
+
+//Route::get('/', 'LoginController@getLoginIndex');
+
+# ------------------------------------
+# Authentication
+# ------------------------------------
+Route::get('/', 'Auth\AuthController@getLogin');
+Route::post('/', 'Auth\AuthController@postLogin');
+
+
+Route::get('/register', 'Auth\AuthController@getRegister');
+Route::post('/register', 'Auth\AuthController@postRegister');
+
+Route::get('/logout', 'Auth\AuthController@logout');
+
+# Debugging route just to show whether you're logged in or not
+Route::get('/show-login-status', function() {
+    # You may access the authenticated user via the Auth facade
+    $user = Auth::user();
+    if($user) {
+        echo 'You are logged in.';
+        dump($user->toArray());
+    } else {
+        echo 'You are not logged in.';
+    }
+    return;
+});
+
+//------------------------------------->
+
+
+
+Route::get('/product', 'ProductController@getProductIndex');
+
+
+
+Route::get('/product/edit', 'ProductController@getProductEdit');
+
+
+Route::get('/shop', 'ShopController@getShopIndex');
+
+
+Route::get('/profile', 'profileController@getProfileIndex');
+
+Route::get('/profile/edit', 'profileController@getProfileEdit');
+
+//Route::get('/li', 'homeController@getHomeRedirect');
+//Route::get('/user', 'homeController@getHomeRedirect');
+
+//Route::post('/li', 'liController@postLiIndex');
+//Route::post('/user', 'userController@postUserIndex');
+   
 });

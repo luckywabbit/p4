@@ -1,0 +1,105 @@
+/* CSS Document */
+
+body {
+	background: #ccc;
+}
+.container {
+	background: #fff;
+	margin: 15px auto;
+	/*min-height:500px;*/
+	border-radius: 16px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+	border: 1px solid #000;
+}
+.header {
+	border-bottom: 1px solid #000;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	padding: 15px;
+	text-align: center;
+	background: #777;
+	color: #fff;
+	margin-bottom: 15px;
+}
+.header a, .header a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+nav ul {
+	text-align: center;
+}
+nav ul li {
+	display: inline-block;
+}
+nav ul li a {
+	padding: 5px 15px;
+	border: 1px solid #000;
+	margin: 0 10px;
+	text-decoration: none;
+	color: #fff;
+	background: #777;
+}
+nav ul li a:hover {
+	text-decoration: none;
+	background: #560001;
+	color: #fff;
+}
+section {
+	min-height: 250px;
+}
+.genLi, .genUser {
+	border: 1px solid #000;
+	border-radius: 15px;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+	padding: 15px;
+	min-height: 300px;
+}
+.intro {
+	font-size: 20px;
+}
+.alert {
+	border-radius: 0;
+	text-align: center;
+}
+.bam {
+	font-weight: bold;
+}
+input {
+	margin: 10px 0;
+}
+.user {
+	border: 1px solid #ccc;
+	padding: 15px 0;
+	text-align: center;
+}
+.userAvatar {
+	text-align: center;
+}
+.userAvatar img {
+	height: 100px;
+	width: 100px;
+	background: #ccc;
+}
+.userAvatar img {
+	border-radius: 50px;
+}
+.userInfo {
+	display: inline-block;
+	text-align: left;
+	border: 1px solid #ccc;
+	padding: 5px;
+	margin-top: 10px;
+}
+.userInfo span {
+	font-weight: bold;
+}
+.footer {
+	border-top: 1px solid #000;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	padding: 15px;
+	text-align: center;
+	background: #777;
+	color: #fff;
+	margin-top: 45px;
+}
