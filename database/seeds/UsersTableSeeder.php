@@ -1,0 +1,44 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class UsersTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+         $user = \App\User::firstOrCreate(['email' => 'jill@harvard.edu']);
+         $user->name = 'Jill';
+         $user->email = 'jill@harvard.edu';
+         $user->password = \Hash::make('helloworld');
+		 $user->product_id = 1;
+         $user->save();
+
+         $user = \App\User::firstOrCreate(['email' => 'jamal@harvard.edu']);
+         $user->name = 'Jamal';
+         $user->email = 'jamal@harvard.edu';
+         $user->password = \Hash::make('helloworld');
+		 $user->product_id = 1;
+         $user->save();
+		 
+		 $user = \App\User::firstOrCreate(['email' => 'michael@luckywabbit.com']);
+         $user->name = 'Mike';
+         $user->email = 'michael@luckywabbit.com';
+         $user->password = \Hash::make('helloworld');
+		 $user->product_id = 1;
+         $user->save();
+
+         $user = \App\User::firstOrCreate(['email' => 'dwa15.practice@gmail.com']);
+         $user->name = 'Susan';
+         $user->email = 'dwa15.practice@gmail.com';
+         $user->password = \Hash::make('helloworld');
+		 $user->product_id = 1;
+         $user->save();
+		 
+		 
+    }
+}

@@ -29,14 +29,16 @@ such as a page specific stylesheets.
 
     <h3>Shop</h3>
 
-    {{-- @if ($lorem)
-        @foreach ($lorem as $value)
-            <p>{{ $value}}</p>
+   @if ($products)
+        @foreach ($products as $product)
+            <p>{{ $product->product_name}}</p>
+            <p>{{ $product->product_price}}</p>
+            <p>{{ $product->product_description}}</p>
         @endforeach
     @else
         <p>please select number of paragraphs</p>
     @endif
-    --}}
+
 
 @stop
 
