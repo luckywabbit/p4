@@ -108,9 +108,9 @@ Route::get('/product/edit', 'ProductController@getProductEdit');
 Route::get('/shop', 'ShopController@getShopIndex');
 
 
-Route::get('/profile', 'profileController@getProfileIndex');
+Route::get('/profile', 'ProfileController@getProfileIndex');
 
-Route::get('/profile/edit', 'profileController@getProfileEdit');
+Route::get('/profile/edit', 'ProfileController@getProfileEdit');
 
    
 });
