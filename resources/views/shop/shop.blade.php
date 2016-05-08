@@ -21,7 +21,7 @@ such as a page specific stylesheets.
         <li > <a href="/product">Product Info</a> </li>
         <li> <a href="/shop">Shop</a> </li>
         <li> <a href="/profile">Profile</a> </li>
-        <li > <a href="/">LogOut</a> </li>
+        <li > <a href="/logout">LogOut</a> </li>
       </ul>
 @stop
 
@@ -34,6 +34,9 @@ such as a page specific stylesheets.
             <p>{{ $product->product_name}}</p>
             <p>{{ $product->product_price}}</p>
             <p>{{ $product->product_description}}</p>
+            
+            <a href="/shop/buy/{{ $product->id}}" id="{{ $product->id}}">Buy {{ $product->product_name}}</a>
+            
         @endforeach
     @else
         <p>please select number of paragraphs</p>

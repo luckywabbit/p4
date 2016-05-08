@@ -9,12 +9,11 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 use Illuminate\Http\Request;
 
-use Faker\Factory as Faker;
 
 class ShopController extends Controller
 {
     /**
-     * Responds to requests to /user
+     * Responds to requests to /shop
      */
 
     public function getShopIndex(Request $request)
@@ -133,7 +132,58 @@ class ShopController extends Controller
 
     }#End getUserIndex()
 	
-	
+	    public function getShopBuy($id)
+    {
+		
+		
+		echo 'shop buy ' . $id;
+		
+		
+/*		
+		if($user ) {
+				echo 'got user';	
+		}else{
+			echo 'Dont got user';
+		}
+		
+		*/
+		
+		
+		$user = \App\User::where('id', '=',\Auth::id())->first();
+        # If we found the user, update the product
+        if($user) {
+            # Give it a different title
+            $user ->product_id = $id;
+            # Save the changes
+            $user ->save();
+			
+			 \Session::flash('message','Product Updated.');
+            return redirect('/product');
+			
+            //echo "Update complete; check the database to see if your update worked...";
+        }
+        else {
+            echo "Product not found, can't update.";
+        }
 
+
+		
+		
+/*		  $product = \App\Product::where('product_name', 'LIKE', '%Diamond%')->first();
+        # If we found the product, update it
+        if($product ) {
+            # Give it a different title
+            $product ->product_name = 'Uranium Diamond 2';
+            # Save the changes
+            $product ->save();
+            echo "Update complete; check the database to see if your update worked...";
+        }
+        else {
+            echo "Product not found, can't update.";
+        }*/
+		
+		
+		
+	}
 
 }#End class userController extends BaseController

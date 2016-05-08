@@ -29,7 +29,19 @@
     <div class="row">
         <div class="col-md-12 header">
             <header>
-                <a href="/"><h1>Online Servicing</h1></a>
+                <a href="/"><h1>UpSell</h1></a>
+                        
+                         
+                         
+                     @if(Auth::check())
+                     	<a href='/'>hello {{Auth::user()->name}}</a>
+                        <a href='/logout'>Log out</a>
+                    @endif
+    
+                        
+                
+                
+                
                 <nav>@yield('nav')</nav>
             </header>
         </div>

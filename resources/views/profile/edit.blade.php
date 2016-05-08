@@ -21,7 +21,7 @@ such as a page specific stylesheets.
         <li > <a href="/product">Product Info</a> </li>
         <li> <a href="/shop">Shop</a> </li>
         <li> <a href="/profile">Profile</a> </li>
-        <li > <a href="/">LogOut</a> </li>
+        <li > <a href="/logout">LogOut</a> </li>
       </ul>
 @stop
 

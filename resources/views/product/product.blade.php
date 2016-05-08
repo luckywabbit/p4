@@ -21,25 +21,44 @@ such as a page specific stylesheets.
         <li > <a href="/product">Product Info</a> </li>
         <li> <a href="/shop">Shop</a> </li>
         <li> <a href="/profile">Profile</a> </li>
-        <li > <a href="/">LogOut</a> </li>
+        <li > <a href="/logout">LogOut</a> </li>
       </ul>
 @stop
 
 @section('content')
 
     <h3>Product Info</h3>
-    <a href="/product/edit">Edit Product</a>
     
+       @if ($user)
+        @foreach ($user as $value)
+        	<p>{{ $value->name}}</p>
+            <p>{{ $value->product_id}}</p>
 
-    {{-- @if ($lorem)
-        @foreach ($lorem as $value)
-            <p>{{ $value}}</p>
         @endforeach
     @else
-        <p>please select number of paragraphs</p>
+        <p>no product</p>
     @endif
+    
+    
+    
+    {{--
+   @if ($products)
+        @foreach ($products as $product)
+        	<p>{{ $product->name}}</p>
+            <p>{{ $product->user_product_id}}</p>
+        	
+        
+            <p>{{ $product->product_name}}</p>
+            <p>{{ $product->product_price}}</p>
+            <p>{{ $product->product_description}}</p>
+        @endforeach
+    @else
+        <p>no product</p>
+    @endif
+    
     --}}
-
+    
+		<a href="/product/edit">Edit Product</a>
 @stop
 
 

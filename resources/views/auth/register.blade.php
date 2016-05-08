@@ -26,11 +26,22 @@
             <label for='email'>Email</label>
             <input type='text' name='email' id='email' value='{{ old('email') }}'>
         </div>
+        
+        
+
+          <div class='form-group'>
+            <label for='user_cc'>Last 4 digits of Credit Card</label>
+            <input type='text' name='user_cc' id='user_cc' value='{{ old('user_cc') }}'>
+        </div>
+
+        
 
         <div class='form-group'>
             <label for='password'>Password</label>
             <input type='password' name='password' id='password'>
         </div>
+
+
 
         <div class='form-group'>
             <label for='password_confirmation'>Confirm Password</label>

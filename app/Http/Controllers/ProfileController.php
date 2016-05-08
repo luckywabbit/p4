@@ -9,57 +9,26 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 use Illuminate\Http\Request;
 
-use Faker\Factory as Faker;
+
 
 class ProfileController extends Controller
 {
     /**
-     * Responds to requests to /user
+     * Responds to requests to /profile
      */
 
     public function getProfileIndex(Request $request)
     {
 		
-		return view('profile.profile');
+		$user = \App\User::where('id', '=',\Auth::id())->get();
 		
 		
-	/*	//validate Request
-		$this->validate($request, [
-        	'userCount' => 'required|numeric|min:1|max:20'
-    	]);
-	
+		return view('profile.profile')->with('user',$user);
 		
-		// declare variables
-        $usersGenerated = [];
-        $userGenerated = [];
+		
 
-		// Get requested number of users
-        $userCount = $request->input('userCount');
 
-         for ($x = 1; $x <= $userCount; $x++) {
-				//Create fake user
-                $faker = Faker::create();
-
-				// Create array from user variables
-                $userGenerated = array(
-                    'Name' => $faker->name,
-                    'Email' => $faker->email,
-                    'City' => $faker->city,
-                    'Member Since' => $faker->year
-                );
-
-				//push $userGenerated array into $usersGenerated creating multidimentional array
-                array_push($usersGenerated, $userGenerated);
-          }// END for loop
-
-			//return user view with $userCount and $usersGenerated array
-          return view('user.user', [
-                'userCount' => $userCount,
-                'usersGenerated' => $usersGenerated
-          ]);
-*/
-
-    }#End getUserIndex()
+    }#End getProfileIndex()
 	
 	
 	
@@ -67,10 +36,36 @@ class ProfileController extends Controller
 	 public function getProfileEdit(Request $request)
     {
 		
+		
+				
+		//find(product_id);
+		 # First get a book to delete
+
+		 $user = \App\User::where('id', '=',\Auth::id());    
+		$user->delete();
+		 
+		 
+  /*      $user = \App\User::where('id', '=',\Auth::id())->get();
+        # If we found the book, delete it
+        if($user) {
+            # Goodbye!
+            $user->delete();
+            return "Deletion complete; check the database to see if it worked...";
+        }
+        else {
+            return "Can't delete - Product not found.";
+        }*/
+		
+		\Session::flash('message','Account deleted, thank you.');
+		return redirect('/');
 
 		
-		return view('profile.edit');
+		//return view('auth.login');
 		
 	}
+	
 
-}#End class userController extends BaseController
+	
+	
+
+}#End class ProfileController extends BaseController

@@ -9,45 +9,44 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 use Illuminate\Http\Request;
 
-use Badcow\LoremIpsum\Generator;
+
 
 
 class ProductController extends Controller
 {
     /**
-     * Responds to requests to /li
+     * Responds to requests to /product
      */
     public function getProductIndex(Request $request)
     {
 		
-		//return 'ProdInfo';
+		//$product = \App\Product::getProduct();
+
+        //return view('books.index')->with('books',$books);
 		
-		return view('product.product');
+		//return view('product.product')->with('product',$product);;
 		
+		//$products = \App\Product::where('product_id', '=',\Auth::id())->get();
 		
+		$user = \App\User::where('id', '=',\Auth::id())->get();
 		
-		/*
+		 //$user_product = $user_id[user_product_id] ;
+		 
+		 
+		 
+		// $products = \App\Product::where('product_id', '=', 3 )->get();
+		 
+		 
+		 
+		//$products = \App\Product::where('id', '=', 2)->get();
 		
+		//return \App\Book::with('author')->where('user_id', '=',\Auth::id())->orderBy('id','desc')->get();
 		
-		//validate Request
-		$this->validate($request, [
-			'liCount' => 'required|numeric|min:1|max:20'
-		]);
+		return view('product.product')->with('user',$user);;	
 	
-		//Get requested number of lorem Ipsum paragraphs
-        $liCount = $request->input('liCount');
-		
-		/// Instatiate Generator and number of paragraphs
-        $generator = new Generator();
-        $paragraphs = $generator->getParagraphs($liCount);
-
-        //return Lorem Ipsum view pass the $paragraphs data
-        return view('li.li', ['liCount' => $liCount, 'lorem' => $paragraphs]);
-*/
 
 
-
-    }#End getLiIndex()
+    }#End getProductIndex()
 	
 	
     public function getProductEdit(Request $request)
@@ -58,6 +57,17 @@ class ProductController extends Controller
 		return view('product.edit');
 		
 	}
+	
+/*	
+	
+	    public function getProductHomeIndex(Request $request)
+    {
+		
+		//return redirect()->action('getProductIndex');
+		
+
+		
+	}*/
 			
 	
 	

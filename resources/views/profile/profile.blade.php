@@ -30,14 +30,28 @@ such as a page specific stylesheets.
     <h3>Profile</h3>
     <a href="/profile/edit">Edit Profile</a>
 
-    {{-- @if ($lorem)
-        @foreach ($lorem as $value)
-            <p>{{ $value}}</p>
+   @if ($user)
+
+          
+           
+       @foreach ($user as $value)
+            <p>{{ $value->name}}</p>
+			<p>{{ $value->email}}</p>
+            <p>{{ $value->user_product_id}}</p>
+            <p>{{ $value->user_cc}}</p>
         @endforeach
-    @else
-        <p>please select number of paragraphs</p>
+           
+           
+         <a href="/profile/edit">delete profile</a> 
+           
+           
+           
+            {{--<p>{{ $user->name}}</p>
+            <p>{{ $user->email}}</p>
+            <p>{{ $user->product_id}}</p>
+            --}}
+
     @endif
-    --}}
 
 @stop
 

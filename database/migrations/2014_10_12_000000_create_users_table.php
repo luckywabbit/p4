@@ -19,7 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->rememberToken();
             $table->timestamps();
+			
 			$table->integer('product_id');
+			
+			//$table->integer('user_cc');
+			$table->string('user_cc', 60);
         });
     }
 

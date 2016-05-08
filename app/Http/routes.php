@@ -35,6 +35,8 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('/', 'Auth\AuthController@getLogin');
 Route::post('/', 'Auth\AuthController@postLogin');
 
+Route::get('/login', 'Auth\AuthController@getLogin');
+
 
 Route::get('/register', 'Auth\AuthController@getRegister');
 Route::post('/register', 'Auth\AuthController@postRegister');
@@ -97,20 +99,26 @@ Route::get('/debug', function() {
 
 
 
-
-Route::get('/product', 'ProductController@getProductIndex');
-
-
-
-Route::get('/product/edit', 'ProductController@getProductEdit');
-
-
-Route::get('/shop', 'ShopController@getShopIndex');
-
-
-Route::get('/profile', 'ProfileController@getProfileIndex');
-
-Route::get('/profile/edit', 'ProfileController@getProfileEdit');
-
+	Route::group(['middleware' => 'auth'], function() {
+		
+		//Route::get('/', 'ProductController@getProductHomeIndex');
+		
+		
+		Route::get('/product', 'ProductController@getProductIndex');
+		
+		
+		
+		Route::get('/product/edit', 'ProductController@getProductEdit');
+		
+		
+		Route::get('/shop', 'ShopController@getShopIndex');
+		
+		Route::get('/shop/buy/{id?}', 'ShopController@getShopBuy');
+		
+		
+		Route::get('/profile', 'ProfileController@getProfileIndex');
+		
+		Route::get('/profile/edit', 'ProfileController@getProfileEdit');
+	});
    
 });
