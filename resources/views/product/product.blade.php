@@ -2,9 +2,14 @@
 
 
 @section('title')
-    Online Servicing | Products
+    Upsell  | Your Product
 @stop
 
+@section('bodyClass')
+    product contentWithAside         
+
+    
+@stop
 
 {{--
 This `head` section will be yielded right before the closing </head> tag.
@@ -17,27 +22,83 @@ such as a page specific stylesheets.
 
 @section('nav')
 	{{-- Additional navigation to help user navigate back Home --}}
-       <ul class="nav navbar-nav navbar-left">
-        <li > <a href="/product">Product Info</a> </li>
-        <li> <a href="/shop">Shop</a> </li>
-        <li> <a href="/profile">Profile</a> </li>
-        <li > <a href="/logout">LogOut</a> </li>
-      </ul>
+
 @stop
 
-@section('content')
+@section('contentWithAside')
 
-    <h3>Product Info</h3>
+    <h3 class="pageTitle">Your Product Info</h3>
     
-       @if ($user)
-        @foreach ($user as $value)
-        	<p>{{ $value->name}}</p>
-            <p>{{ $value->product_id}}</p>
+    
+           @if ($product)
+        @foreach ($product as $value)
+        	<p>{{ $value->product_name}}</p>
+            <p>{{ $value->product_description}}</p>
+
 
         @endforeach
     @else
         <p>no product</p>
     @endif
+    
+    
+    
+    
+     {{--  @if ($user)
+        @foreach ($user as $value)
+        	<p>{{ $value->name}}</p>
+            <p>{{ $value->id}}</p>
+            <p>{{ $value->product_id}}</p>
+
+        @endforeach
+    @else
+        <p>no product</p>
+    @endif --}}
+    
+    
+     <form method='POST' action='/product/edit'>
+     
+       @foreach ($user as $value)
+ 				<input type='hidden' name='id' value='{{$value->id}}'>
+       @endforeach
+
+    
+     
+     {{ csrf_field() }}
+
+    
+    <div class='row addonList'>
+    <div class="addonHeader"><h3>Your Additional Options:</h3></div>
+            <fieldset>
+                
+                @foreach($addons_for_checkboxes as $addon_id => $addon_name)
+             
+                
+                	<div class="col-md-4 addonItem">
+                    <label>
+                   
+                    <input
+                        type='checkbox'
+                        value='{{ $addon_id }}'
+                        name='addons[]'
+                        
+                        {{ (in_array($addon_id,$addons_of_user_for_checkboxes)) ? 'CHECKED' : '' }}
+                    >
+                  
+                    <div class="addonName">{{$addon_name}}</div>
+                    </label>
+               	</div>
+                @endforeach
+            </fieldset>
+            
+
+            
+            <button type="submit" class="btn btn-primary addonUpdate">Update Additional Options</button>
+            
+        </div>
+    </form>
+    
+    
     
     
     
@@ -58,8 +119,22 @@ such as a page specific stylesheets.
     
     --}}
     
-		<a href="/product/edit">Edit Product</a>
+		
 @stop
+
+
+
+
+@section('aside')
+
+<div>
+<h1><a href="/shop">Have you tried the shop?</a></h1>
+</div>
+
+@stop
+
+
+
 
 
 {{--

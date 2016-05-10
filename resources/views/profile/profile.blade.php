@@ -5,6 +5,11 @@
     Online Servicing | Profile
 @stop
 
+@section('bodyClass')
+    profile contentWithAside
+@stop
+
+
 
 {{--
 This `head` section will be yielded right before the closing </head> tag.
@@ -16,18 +21,13 @@ such as a page specific stylesheets.
 @stop
 
 @section('nav')
-	{{-- Additional navigation to help user navigate back Home --}}
-     <ul class="nav navbar-nav navbar-left">
-        <li > <a href="/product">Product Info</a> </li>
-        <li> <a href="/shop">Shop</a> </li>
-        <li> <a href="/profile">Profile</a> </li>
-        <li > <a href="/">LogOut</a> </li>
-      </ul>
+	{{-- Addi to Nav Section --}}
+
 @stop
 
-@section('content')
+@section('contentWithAside')
 
-    <h3>Profile</h3>
+    <h3 class="pageTitle">Profile</h3>
     <a href="/profile/edit">Edit Profile</a>
 
    @if ($user)
@@ -54,6 +54,14 @@ such as a page specific stylesheets.
     @endif
 
 @stop
+
+@section('aside')
+
+<div>
+	<h1><a href="/shop">Have you tried the shop?</a></h1>
+</div>
+@stop
+
 
 
 {{--

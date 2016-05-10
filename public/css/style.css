@@ -5,6 +5,7 @@ body {
 }
 .container {
 	background: #fff;
+	background: rgba(255,255,255,0.6);
 	margin: 15px auto;
 	/*min-height:500px;*/
 	border-radius: 16px;
@@ -18,8 +19,10 @@ body {
 	padding: 15px;
 	text-align: center;
 	background: #777;
+	background:rgba(0,0,0,0.5);
 	color: #fff;
 	margin-bottom: 15px;
+	position:relative;
 }
 .header a, .header a:hover {
 	color: #fff;
@@ -33,27 +36,22 @@ nav ul li {
 }
 nav ul li a {
 	padding: 5px 15px;
-	border: 1px solid #000;
+	border: 1px solid #fff;
+	border-radius:5px;
 	margin: 0 10px;
 	text-decoration: none;
 	color: #fff;
 	background: #777;
 }
-nav ul li a:hover {
+nav.nav ul li a:hover {
 	text-decoration: none;
-	background: #560001;
+	background: #097ACC;
 	color: #fff;
 }
 section {
 	min-height: 250px;
 }
-.genLi, .genUser {
-	border: 1px solid #000;
-	border-radius: 15px;
-	box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-	padding: 15px;
-	min-height: 300px;
-}
+
 .intro {
 	font-size: 20px;
 }
@@ -61,38 +59,183 @@ section {
 	border-radius: 0;
 	text-align: center;
 }
-.bam {
-	font-weight: bold;
-}
+
 input {
 	margin: 10px 0;
 }
-.user {
-	border: 1px solid #ccc;
-	padding: 15px 0;
-	text-align: center;
+
+
+/*----------P4 Start-----------*/
+body.contentWithAside .content{
+	display:none;
+	}
+
+
+body.content .contentWithAside{
+	display:none;
+	}
+	
+body.Bronze, .Bronze .addonItem label{
+	background:url(../img/bronze.jpeg);
+	background-size:cover;
+	
+	}
+	
+body.Silver, .Silver .addonItem label{
+	background:url(../img/silver.jpeg);
+	background-size:cover;
+	
+	}			
+body.Gold, .Gold .addonItem label{
+	background:url(../img/gold.jpeg);
+	background-size:cover;
+	
+	}			
+body.Platinum,  .Platinum .addonItem label{
+	background:url(../img/platinum.jpeg);
+	background-size:cover;
+	
+	}			
+			
+
+.userHeadingBar{
+	
+	position:absolute;
+	right:0;
+	top:15px;
+	margin:15px;
+	text-align:left;
+
+	}
+
+
+
+.userGreeting{
+	display:inline-block;
+	padding:5px;
+	color:#fff;
+	}
+
+
+.userLogout{
+	display:inline-block;
+	padding:5px;
+
+	text-decoration:underline;
+	botder-radius:5px;
+	color:#fff;
+	
+	}
+
+section{
+
+	padding-left:15px;
+	padding-right:15px;
+	}
+
+
+
+.pageTitle{
+	text-align:center;
+	font-size:35px;
+	border-bottom:1px solid #ccc;
+	margin-bottom:25px;
+	padding-bottom:15px;
+
+	}
+
+
+
+.prodItem{
+	border:1px solid #ccc;
+	padding:15px;
+	border-radius:5px;
+	text-align:center;
+	}
+
+a.btnBuy{
+	display:inline-block;
+	border-radius:5px;
+	width:100%;
+	color:#fff;
+	padding: 10px;;
+	font-weight:bold;
+	background:#097ACC;
+	border:3px solid #fff;
+	
+	}
+
+.Bronze .addonItem label{
+	background:url(../img/bronze.jpeg);
+	background-size:cover;
+	}
+ 
+
+aside div{
+	min-height: 250px;
+	border:1px solid #ccc;
+	padding:15px;
+	border-radius:5px;
+	background:rgba(255,255,255,0.5);
+	}
+
+.addonList{
+	border-top:1px solid #ccc;
+
+	}
+
+.addonHeader{
+	text-align:center;
+	}
+
+.addonItem{
+
+	padding:5px 15px;
+	
+	}
+
+.addonItem label{
+	width:100%;
+	text-align:center;
+	border:1px solid #fff;
+	text-shadow:0 0 3px rgba(0,0,0,0.6);
+	background:#097ACC;
+	border-radius:5px;
+	color:#fff;
+	font-weight:bold;
+	cursor:pointer;
+	padding:5px;
+	}
+	
+.addonItem input[type="checkbox"]{
+  width: 30px; 
+  height: 30px;
+  cursor:pointer;
 }
-.userAvatar {
-	text-align: center;
-}
-.userAvatar img {
-	height: 100px;
-	width: 100px;
-	background: #ccc;
-}
-.userAvatar img {
-	border-radius: 50px;
-}
-.userInfo {
-	display: inline-block;
-	text-align: left;
-	border: 1px solid #ccc;
-	padding: 5px;
-	margin-top: 10px;
-}
-.userInfo span {
-	font-weight: bold;
-}
+
+.addonName{
+	font-size:20px;
+	}
+
+.addonUpdate, .addonUpdate:hover{
+	display:inline-block;
+	text-align:center;
+	border:1px solid #ccc;
+	background:#00971F;
+	border-radius:5px;
+	color:#fff;
+	font-weight:bold;
+	cursor:pointer;
+	padding:10px 15px;
+	float:right;
+	margin-right:15px;
+	margin-top:20px;
+	
+	}
+
+
+/*----------P4 End-----------*/
+
 .footer {
 	border-top: 1px solid #000;
 	border-bottom-left-radius: 15px;
@@ -100,6 +243,7 @@ input {
 	padding: 15px;
 	text-align: center;
 	background: #777;
+	background:rgba(0,0,0,0.5);
 	color: #fff;
 	margin-top: 45px;
 }

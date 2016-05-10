@@ -19,13 +19,6 @@ class LoginController extends Controller
         return view('login.login');
     }
 	
-	
-	
-/*	
-    public function getHomeRedirect(Request $request)
-    {
-        return redirect()->action('homeController@getHomeIndex')->with('errors', 'true');;
-    }
-	*/
+
 	
 }

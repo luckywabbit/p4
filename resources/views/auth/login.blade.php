@@ -1,5 +1,12 @@
 @extends('layouts.master')
 
+
+@section('bodyClass')
+    login content
+@stop
+
+
+
 @section('content')
 
     <p>Don't have an account? <a href='/register'>Register here...</a></p>

@@ -2,8 +2,13 @@
 
 
 @section('title')
-    Online Servicing | Shop
+    Upsell | Shop
 @stop
+
+@section('bodyClass')
+    shop content
+@stop
+
 
 
 {{--
@@ -16,31 +21,48 @@ such as a page specific stylesheets.
 @stop
 
 @section('nav')
-	{{-- Additional navigation to help user navigate back Home --}}
-      <ul class="nav navbar-nav navbar-left">
-        <li > <a href="/product">Product Info</a> </li>
-        <li> <a href="/shop">Shop</a> </li>
-        <li> <a href="/profile">Profile</a> </li>
-        <li > <a href="/logout">LogOut</a> </li>
-      </ul>
+	{{-- Add to Nav Section --}}
 @stop
 
 @section('content')
 
-    <h3>Shop</h3>
+    <h3 class="pageTitle">Shop</h3>
+
+<div class="container-fluid">
+	<div class="row">
+    
+    
+    
+		
+		
+
 
    @if ($products)
         @foreach ($products as $product)
-            <p>{{ $product->product_name}}</p>
-            <p>{{ $product->product_price}}</p>
-            <p>{{ $product->product_description}}</p>
-            
-            <a href="/shop/buy/{{ $product->id}}" id="{{ $product->id}}">Buy {{ $product->product_name}}</a>
-            
+        	<div class="col-md-3">
+            	<div class="prodItem"
+                <p class="prodName">{{ $product->product_name}}</p>
+                <p class="prodPrice">{{ $product->product_price}}</p>
+                <p class="prodDescr">{{ $product->product_description}}</p>
+                
+                <a href="/shop/buy/{{ $product->id}}" id="{{ $product->id}}" class="btnBuy">Buy {{ $product->product_name}}</a>
+                </div> <!--End ProdItem-->
+                
+            </div><!--End Col-->
         @endforeach
-    @else
-        <p>please select number of paragraphs</p>
     @endif
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
 
 
 @stop

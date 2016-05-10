@@ -108,7 +108,7 @@ Route::get('/debug', function() {
 		
 		
 		
-		Route::get('/product/edit', 'ProductController@getProductEdit');
+		Route::post('/product/edit', 'ProductController@postProductEdit');
 		
 		
 		Route::get('/shop', 'ShopController@getShopIndex');
