@@ -29,32 +29,16 @@ such as a page specific stylesheets.
 
     <h3 class="pageTitle">Your Product Info</h3>
     
-    
-           @if ($product)
+    <div class="userWelcome">Congratulations on your <span> @foreach ($product as $value) {{ $value->product_name}} @endforeach Membership</span></div>
+      
+   <div class="prodDescript">   
+ @if ($product)
         @foreach ($product as $value)
-        	<p>{{ $value->product_name}}</p>
-            <p>{{ $value->product_description}}</p>
-
-
-        @endforeach
-    @else
-        <p>no product</p>
-    @endif
-    
-    
-    
-    
-     {{--  @if ($user)
-        @foreach ($user as $value)
-        	<p>{{ $value->name}}</p>
-            <p>{{ $value->id}}</p>
-            <p>{{ $value->product_id}}</p>
-
-        @endforeach
-    @else
-        <p>no product</p>
-    @endif --}}
-    
+            <p>{{ $value->product_description}}</p>	
+		@endforeach
+ @endif
+</div>
+   
     
      <form method='POST' action='/product/edit'>
      
@@ -74,14 +58,13 @@ such as a page specific stylesheets.
                 @foreach($addons_for_checkboxes as $addon_id => $addon_name)
              
                 
-                	<div class="col-md-4 addonItem">
+                	<div class="col-md-4 addonItem ">
                     <label>
                    
                     <input
                         type='checkbox'
                         value='{{ $addon_id }}'
-                        name='addons[]'
-                        
+                        name='addons[]'           
                         {{ (in_array($addon_id,$addons_of_user_for_checkboxes)) ? 'CHECKED' : '' }}
                     >
                   
@@ -90,9 +73,7 @@ such as a page specific stylesheets.
                	</div>
                 @endforeach
             </fieldset>
-            
 
-            
             <button type="submit" class="btn btn-primary addonUpdate">Update Additional Options</button>
             
         </div>

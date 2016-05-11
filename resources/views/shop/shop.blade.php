@@ -40,11 +40,9 @@ such as a page specific stylesheets.
    @if ($products)
         @foreach ($products as $product)
         	<div class="col-md-3">
-            	<div class="prodItem"
-                <p class="prodName">{{ $product->product_name}}</p>
-                <p class="prodPrice">{{ $product->product_price}}</p>
-                <p class="prodDescr">{{ $product->product_description}}</p>
-                
+            	<div class="prodItem {{ $product->product_name}}">
+                <p class="prodName">{{ $product->product_name}}</p>          
+                <p class="prodPrice">${{ $product->product_price}}</p>               
                 <a href="/shop/buy/{{ $product->id}}" id="{{ $product->id}}" class="btnBuy">Buy {{ $product->product_name}}</a>
                 </div> <!--End ProdItem-->
                 

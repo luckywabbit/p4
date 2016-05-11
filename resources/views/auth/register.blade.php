@@ -16,38 +16,40 @@
 
     <form method='POST' action='/register'>
         {!! csrf_field() !!}
+        
+<div class="row">
 
-        <div class='form-group'>
-            <label for='name'>Name</label>
-            <input type='text' name='name' id='name' value='{{ old('name') }}'>
+        <div class='form-group col-md-3'>
+            <div><label for='name'>Name</label></div>
+            <div><input type='text' name='name' id='name' value='{{ old('name') }}'></div>
         </div>
 
-        <div class='form-group'>
-            <label for='email'>Email</label>
-            <input type='text' name='email' id='email' value='{{ old('email') }}'>
+        <div class='form-group col-md-3'>
+            <div><label for='email'>Email</label></div>
+            <div><input type='text' name='email' id='email' value='{{ old('email') }}'></div>
         </div>
         
         
 
-          <div class='form-group'>
-            <label for='user_cc'>Last 4 digits of Credit Card</label>
-            <input type='text' name='user_cc' id='user_cc' value='{{ old('user_cc') }}'>
+          <div class='form-group col-md-3'>
+            <div><label for='user_cc'>Last 4 digits of Credit Card</label></div>
+            <div><input type='text' name='user_cc' id='user_cc' value='{{ old('user_cc') }}'></div>
         </div>
-
+</div>
         
-
-        <div class='form-group'>
-            <label for='password'>Password</label>
-            <input type='password' name='password' id='password'>
+	<div class="row">
+        <div class='form-group col-md-3'>
+            <div><label for='password'>Password</label></div>
+            <div><input type='password' name='password' id='password'></div>
         </div>
 
 
 
-        <div class='form-group'>
-            <label for='password_confirmation'>Confirm Password</label>
-            <input type='password' name='password_confirmation' id='password_confirmation'>
+        <div class='form-group col-md-3'>
+           <div> <label for='password_confirmation'>Confirm Password</label></div>
+            <div><input type='password' name='password_confirmation' id='password_confirmation'></div>
         </div>
-
+</div>
         <button type='submit' class='btn btn-primary'>Register</button>
 
     </form>

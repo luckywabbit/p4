@@ -16,6 +16,7 @@ class CreateAddonsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('addon_name');
+			$table->string('addon_class');
         });
     }
 

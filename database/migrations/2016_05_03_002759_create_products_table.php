@@ -22,9 +22,9 @@ class CreateProductsTable extends Migration
 	
 			#Product fields
 			$table->string('product_name');
-			$table->string('product_description');
+			$table->string('product_description', 500 );
 			$table->float('product_price');
-			$table->integer('product_id');
+
 	
 		});
     }

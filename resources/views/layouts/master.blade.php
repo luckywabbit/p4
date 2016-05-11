@@ -23,13 +23,29 @@
     @yield('head')
 
 </head>
-<body class="{{$bodyClass}} @yield('bodyClass')">
+<body class="@if(Auth::check()){{$bodyProductClass}} 
+						@foreach ($bodyAddonsClasses as $value)
+                        	{{ $value }}
+                        @endforeach 
+                      @endif  
+                        @yield('bodyClass')">
 
 
 
 
 
 <div class="container">
+
+		<div class="addonsPurchased">
+            <div class="addonPurch rims"></div>
+            <div class="addonPurch blacklights"></div>
+            <div class="addonPurch bluetooth"></div>
+            <div class="addonPurch freshThreads"></div>
+            <div class="addonPurch lessCal"></div>
+            <div class="addonPurch cowbell"></div>
+		 </div>
+
+
     <div class="row">
         <div class="col-md-12 header">
             <header>
@@ -55,7 +71,7 @@
                             <li> <a href="/shop">Shop</a> </li>
                             <li> <a href="/profile">Profile</a> </li>
 
-                          </ul>
+                         		</ul>
                 
                 
                 @yield('nav')

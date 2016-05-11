@@ -77,9 +77,10 @@ class AuthController extends Controller
             'email' => $data['email'],
 			'password' => bcrypt($data['password']),
 			'product_id' => 1,
-			'user_cc' => bcrypt($data['user_cc'])
-			
-            
+			// user_cc not encrypted for demo purposes
+			//'user_cc' => bcrypt($data['user_cc'])
+			'user_cc' => $data['user_cc'],
+
 			
         ]);
     }
