@@ -2,13 +2,12 @@
 
 
 @section('title')
-    Upsell | Shop
+Upsell | Shop
 @stop
 
 @section('bodyClass')
-    shop content
+shop content
 @stop
-
 
 
 {{--
@@ -21,46 +20,34 @@ such as a page specific stylesheets.
 @stop
 
 @section('nav')
-	{{-- Add to Nav Section --}}
+{{-- Add to Nav Section --}}
 @stop
 
 @section('content')
 
-    <h3 class="pageTitle">Shop</h3>
+<h3 class="pageTitle">Shop</h3>
 
 <div class="container-fluid">
-	<div class="row">
-    
-    
-    
-		
-		
+    <div class="row">
 
 
-   @if ($products)
+        @if ($products)
         @foreach ($products as $product)
-        	<div class="col-md-3">
-            	<div class="prodItem {{ $product->product_name}}">
-                <p class="prodName">{{ $product->product_name}}</p>          
-                <p class="prodPrice">${{ $product->product_price}}</p>               
-                <a href="/shop/buy/{{ $product->id}}" id="{{ $product->id}}" class="btnBuy">Buy {{ $product->product_name}}</a>
-                </div> <!--End ProdItem-->
-                
-            </div><!--End Col-->
+        <div class="col-md-3">
+            <div class="prodItem {{ $product->product_name}}">
+                <p class="prodName">{{ $product->product_name}}</p>
+                <p class="prodPrice">${{ $product->product_price}}</p>
+                <a href="/shop/buy/{{ $product->id}}" id="{{ $product->id}}" class="btnBuy">Buy {{
+                    $product->product_name}}</a>
+            </div> <!--End ProdItem-->
+
+        </div><!--End Col-->
         @endforeach
-    @endif
+        @endif
 
 
-
-	</div>
+    </div>
 </div>
-
-
-
-
-
-
-
 
 
 @stop

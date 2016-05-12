@@ -20,12 +20,11 @@ class AuthController extends Controller
     | a simple trait to add these behaviors. Why don't you explore it?
     |
     */
-	
-	
+
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
-	
-	# Where the user will go if their login fails
+
+    # Where the user will go if their login fails
     protected $loginPath = '/';
 
     protected $redirectAfterLogout = '/';
@@ -50,7 +49,7 @@ class AuthController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -59,15 +58,15 @@ class AuthController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
-			'user_cc' => 'required|numeric|min:1000|max:9999'
-			
+            'user_cc' => 'required|numeric|min:1000|max:9999'
+
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return User
      */
     protected function create(array $data)
@@ -75,26 +74,16 @@ class AuthController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-			'password' => bcrypt($data['password']),
-			'product_id' => 1,
-			// user_cc not encrypted for demo purposes
-			//'user_cc' => bcrypt($data['user_cc'])
-			'user_cc' => $data['user_cc'],
+            'password' => bcrypt($data['password']),
+            'product_id' => 1,
+            // user_cc not encrypted for demo purposes
+            //'user_cc' => bcrypt($data['user_cc'])
+            'user_cc' => $data['user_cc'],
 
-			
+
         ]);
     }
-	
-/*	
-	    public function logout()
-    {
-        \Auth::guard($this->getGuard())->logout();
 
-        \Session::flash('message','You have been logged out.');
 
-        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
-    }
-	
-*/	
-	
+
 }

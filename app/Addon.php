@@ -8,9 +8,7 @@ class Addon extends Model
 {
      public function users() {
         return $this->belongsToMany('\App\User')->withTimestamps();
-		
-		
-		//$userAddons = $this->users();
+;
     }
 	
 	
@@ -18,24 +16,6 @@ class Addon extends Model
 
         $addons = \App\Addon::orderBy('addon_name','ASC')->get();
 
-		
-		
-		//dump($addons);
-		
-
-	
-	//return $userAddons;
-		
-		//$addons = \App\Addon::orderBy('addon_name','ASC')->get();
-		
-		
-		
-		
-		//$userAddons = \App\Addon::where('user_id', '=',$userID)->get();
-		
-		//return $addons;
-		
-		//dump($userID);
 
         $addons_for_checkboxes = [];
 
@@ -62,30 +42,14 @@ class Addon extends Model
     		$addonID= $user->pivot->addon_id;
 			
 			$userAddons[] += $addonID;
-		
-			//dump($addonID);
-			//dump($addonID);
+
 		}
 		
 
-
- 	//dump($userAddons);
 	
 	return $userAddons;
 		 
-		 
-		 
-/*	
-        $addons = \App\Addon::orderBy('addon_id','ASC')->get();
 
-        $addons_for_checkboxes = [];
-
-        foreach($addons as $addon) {
-            $addons_for_checkboxes[$addon['id']] = $addon['name'];
-        }
-
-        return $addons_for_checkboxes;
-*/
     }
 	
 	

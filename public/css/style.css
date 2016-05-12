@@ -12,6 +12,16 @@ body {
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
 	border: 1px solid #000;
 }
+
+.flash_message{
+	padding:10px;
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	font-weight:bold;
+	text-align:center;
+	
+	}
+
 .header {
 	border-bottom: 1px solid #000;
 	border-top-left-radius: 15px;
@@ -193,13 +203,16 @@ a.btnBuy {
 a.btnBuy:hover{
 	background: rgba(0,0,0,0.6);
 	}
+aside a.upsell{
+	color: #fff;
+    font-size: 28px;
+	}
 
 aside div {
-	min-height: 250px;
-	border: 1px solid #ccc;
-	padding: 15px;
-	border-radius: 5px;
-	background: rgba(255,255,255,0.5);
+    border: 1px solid #fff;
+    padding: 15px;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.5);
 }
 .addonList {
 	border-top: 1px solid rgba(0,0,0,0.3);
@@ -221,6 +234,7 @@ aside div {
 	font-weight: bold;
 	cursor: pointer;
 	padding: 5px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 .addonItem input[type="checkbox"] {
 	width: 30px;
@@ -229,12 +243,13 @@ aside div {
 }
 .addonName {
 	font-size: 20px;
+	display:block;
 }
 .addonUpdate, .addonUpdate:hover {
 	display: inline-block;
 	text-align: center;
 	border: 1px solid #ccc;
-	background: #00971F;
+	background: rgba(0,0,0,0.5);
 	border-radius: 5px;
 	color: #fff;
 	font-weight: bold;
@@ -269,6 +284,52 @@ body.Platinum, .Platinum {
 	 background: url(../img/platinum.jpg);
 	 background-size: cover;
 	 }
+	 
+.userProfile  span{
+	font-weight:bold;
+	}
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: rgba(0,0,0,0.3);
+    border-color: #fff;
+	font-weight:bold;
+}
+
+.btn-primary:hover{
+	background-color: rgba(0,0,0,0.6);
+	text-decoration:underline;
+	border-color:#fff;
+}
+
+.addCC{
+	border-top:1px solid rgba(0,0,0,0.3);
+	margin-top:15px;
+	}
+	
+.deleteCC{
+	color: #777;
+	border:1px solid #777;
+    border-color: #777;
+	border-radius:5px;
+	padding:2px 5px;
+	margin-left:10px;
+	}
+	
+.deleteCC:hover{
+	color: #fff;
+	text-decoration:underline;
+	background:rgba(0,0,0,0.3);
+	}
+	
+
+.userName, .userEmail, .userCC{
+	margin-top:15px;
+	}
+
+	 
 /*----------P4 End-----------*/
 
 .footer {
