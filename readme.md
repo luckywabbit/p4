@@ -7,11 +7,10 @@ http://p4.luckywabbit.me
 Laravel app demonstrating Login/Registration, with current product and profile info, with ability to update product and addons, add/delete new credit cards 
 
 ## Demo
-
+https://drive.google.com/file/d/0B3nqEWHg6Uy3Um9qeEZNbHRXREE/view?usp=sharing
 
 ## Details for teaching team
-Login as different users and see the different Products, addons, and additional credit cards for individual users
-Add a credit card with the same last4 digits for 2 individual users, and delete function will delete the card for the current logged in user
+Login as different users and see the different selected product, addons, and additional credit cards for individual user accounts
 
 
 ## Outside code
